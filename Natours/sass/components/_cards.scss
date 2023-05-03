@@ -20,7 +20,7 @@
 
 
         &--front{
-            background-color: white;
+            background-color: $color-white;
         }
 
         &--back{
@@ -176,4 +176,96 @@
         font-weight: 300;
         margin: 0px;
        }
+
+
+
+            @include respond(tab_port)
+            {
+    
+                        height: auto;
+                        border-radius: 1rem;
+                        background-color: $color-white;
+                        box-shadow: 0 1.5rem 3rem rgba($color-black, 0.15);
+
+                &__side{
+                        
+                        height: auto;
+                        box-shadow: none;
+                        font-size: 2rem;
+                        position: relative;
+
+                       
+                        
+                       &--back{
+                        
+                        border-radius: 0;
+                        transform: rotateY(0deg);
+                        clip-path: polygon(0 15%, 100% 0, 100% 100%,0 100%);
+
+                        &-1{
+                            background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+                        }
+
+                        &-2
+                        {
+                            background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark);
+                        }
+                    &-3
+                    {background-image: linear-gradient(to right bottom, $color-tertiary-light,$color-tertiary-dark);}
+                        
+                    }
+                }
+            
+                
+                &:hover &__side--front
+                {
+                    transform: rotateY(0deg);
+
+                }
+
+               
+
+                //Back side Styling
+
+                &__cta
+                {
+                    padding: 5rem 0 0 0;
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    
+                    text-align: center;
+
+                    a{
+                       position: relative;
+                       top:10rem;
+                    }
+                }
+
+                &__price-box
+                {
+                 
+                    text-align: center;
+                    position: relative;
+                    top: 16rem;
+                    color: white;
+                }
+
+                &__price-only
+                {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    margin: 0px;
+                }
+
+                &__price-value
+                {
+                    font-size: 4rem;
+                    font-weight: 300;
+                    margin: 0px;
+                }
+
+                
+
+                        }
 }

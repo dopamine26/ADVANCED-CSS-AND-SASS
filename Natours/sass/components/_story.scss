@@ -8,23 +8,58 @@
     padding: 6rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
+    @include respond(tab_port)
+    {
+        width: 100%;
+        padding: 4rem;
+    }
+
+    @include respond(phone)
+    {
+        transform: skewX(0);
+    }
+
+
 
     & > *
     {
         transform: skewX(12deg);
+        @include respond(phone)
+    {
+        transform: translate(-2rem, -1rem) skewX(0);
+        top:0.5rem;
+        left: 1.8rem;
+    }
+
     }
 
     &__shape
 {
     width: 15rem;
     height: 15rem;
-position: relative;
+    position: relative;
     
     float: left;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     
+}
+
+&__text
+{
+    @include respond(phone)
+    {
+       padding-left: 8rem;
+    }
+
+    @include respond(tab_port)
+    {
+        
+        padding-left: 6rem;
+    }
+
+ 
 }
 
  &__image

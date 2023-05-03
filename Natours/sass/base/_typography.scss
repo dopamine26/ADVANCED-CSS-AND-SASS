@@ -4,7 +4,7 @@ body {
     /* font-size: 16px; */
     line-height: 1.7;
     color: color-grey-dark;
-    padding: 2.5rem;
+  
 }
 
 
@@ -16,6 +16,8 @@ body {
   text-transform: uppercase;
  backface-visibility: hidden;
  margin-bottom: 6rem;
+ 
+
 
  &--main
 {
@@ -26,6 +28,12 @@ body {
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+
+  @include respond(phone)
+  {
+       letter-spacing: 2rem;
+       font-size: 5rem;
+  }
 
   /*
   animation-delay: 3s;
@@ -42,6 +50,14 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 
+    
+  @include respond(phone)
+  {
+       letter-spacing: 0.5rem;
+             
+  }
+
+
 }
 
 }
@@ -55,9 +71,28 @@ body {
   display: inline-block;
   background-clip: text;
   -webkit-background-clip: text;
+  margin-top: 8rem;
   color:transparent;
   letter-spacing: .2rem;
+  padding-top: 8rem;
   transition: all 0.2s;
+
+  @include respond(tab_port)
+  {
+      font-size: 3rem;
+      padding-top: 8rem;
+      margin-top: 0rem;
+      
+  }
+
+  @include respond(phone)
+  {
+      font-size: 2.5rem;
+      
+      padding-top: 5rem;
+      margin-top: 0rem;
+  }
+
 
    &:hover{
 
